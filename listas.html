@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Listas</title>
+        <link rel="stylesheet" href="estilos/estilos.css">
+        <link rel="stylesheet" href="estilos/galeria.css">
+        <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+        <script src="https://kit.fontawesome.com/8c010401e4.js" crossorigin="anonymous"></script>
+    </head>
+    <body>
+        
+
+        <div id="cabezera">
+            <div id="baner">
+                <img src="imagenes/logo.png" alt="showme" width="150px"><br>
+                <input type="text" placeholder="buscar.." id="buscar"><br>
+                <a id="sesion" onclick="showModal()">Crear Cuenta</a>
+              </div>
+        
+              <div id="menu">
+                <ul>
+                    <li><i class="fas fa-home"></i><a href="index.html"> Inicio</a></li>
+                    <li><i class="fas fa-bars"></i><a href="listas.html"> Listas</a></li>
+                    <li><i class="fas fa-user"></i><a href="contacto.html"> Contacto</a></li>
+                </ul>
+              </div>
+        </div>
+
+        <div id="cuerpo" style="color: white;">
+            <script type="text/javascript" src="scripts/javagaleria.js"></script>
+            <h1>Mis Listas</h1><br>
+
+            
+            <h1>Ejemplo:</h1>
+            <div class="lista" id="ejemplo">    
+            </div>
+            <input type="button" value="Agregar elemento" style="float: right; margin-right: 60px;" onclick="agregarElemento();"><br>
+
+            <h1>Libros:</h1>
+            <div class="lista">    
+                <div class="elemento">
+                    <img src="imagenes/dios.webp">
+                      <div>
+                        <h3>Dioses Menores</h3>
+                        <p>1992</p>
+                        <p>Libro</p>
+                      </div>
+                </div>
+                <div class="elemento">
+                    <img src="imagenes/magia.jpg">
+                      <div>
+                        <h3>El Color de la Magia</h3>
+                        <p>1983</p>
+                        <p>Libro</p>
+                      </div>
+                </div>
+                <div class="elemento">
+                    <img src="imagenes/cuerpos.jpg">
+                      <div>
+                        <h3>El Problema de los Tres Cuerpos</h3>
+                        <p>2008</p>
+                        <p>Libro</p>
+                      </div>
+                </div>
+                <div class="elemento">
+                    <img src="imagenes/bruma.jpg">
+                      <div>
+                        <h3>Nacidos de la Bruma I</h3>
+                        <p>2006</p>
+                        <p>Libro</p>
+                      </div>
+                </div>
+                <div class="elemento">
+                    <img src="imagenes/mort.jpg">
+                      <div>
+                        <h3>Mort</h3>
+                        <p>1987</p>
+                        <p>Libro</p>
+                      </div>
+                </div>  
+            </div>
+
+            <h1>juegos:</h1>
+            <div class="lista">      
+                <div class="elemento">
+                    <img src="imagenes/disco.jpg">
+                      <div>
+                        <h3>Disco Elysium</h3>
+                        <p>2019</p>
+                        <p>Juego</p>
+                      </div>
+                </div>
+                <div class="elemento">
+                    <img src="imagenes/botw.png">
+                      <div>
+                        <h3>Breath of the Wild</h3>
+                        <p>2017</p>
+                        <p>Juego</p>
+                      </div>
+                </div>
+                <div class="elemento">
+                    <img src="imagenes/hollow.jpg">
+                      <div>
+                        <h3>Hollow Knight</h3>
+                        <p>2017</p>
+                        <p>Juego</p>
+                      </div>
+                </div>
+                <div class="elemento">
+                    <img src="imagenes/persona.jpg">
+                      <div>
+                        <h3>Persona 5</h3>
+                        <p>2013</p>
+                        <p>Juego</p>
+                      </div>
+                </div>
+            </div>
+
+            <h1>Peliculas:</h1> 
+            <div class="lista">
+                <div class="elemento">
+                    <img src="imagenes/Ghost_in_the_shell_1995_poster.jpg">
+                      <div>
+                        <h3>Ghost in the Shell</h3>
+                        <p>1995</p>
+                        <p>Pelicula</p>
+                      </div>
+                </div>      
+                <div class="elemento">
+                    <img src="imagenes/suspiria.jpg">
+                      <div>
+                        <h3>Suspiria</h3>
+                        <p>2017</p>
+                        <p>Pelicula</p>
+                      </div>
+                </div>
+                <div class="elemento">
+                    <img src="imagenes/bill.jpg">
+                      <div>
+                        <h3>Kill Bill Vol.1</h3>
+                        <p>2003</p>
+                        <p>Pelicula</p>
+                      </div>
+                </div>
+            </div>
+
+            
+
+            <h1>Musica:</h1>
+            <div class="lista">      
+                <div class="elemento">
+                    <img src="imagenes/img1.jpg">
+                      <div>
+                        <h3>Anesthetize</h3>
+                        <p>2010</p>
+                        <p>Album</p>
+                      </div>
+                </div>
+                <div class="elemento">
+                    <img src="imagenes/img2.jpg">
+                      <div>
+                        <h3>In Absentia</h3>
+                        <p>2002</p>
+                        <p>Album</p>
+                      </div>
+                </div>
+                <div class="elemento">
+                    <img src="imagenes/img3.jpg">
+                      <div>
+                        <h3>Fear in a Blank Planet</h3>
+                        <p>2007</p>
+                        <p>Album</p>
+                      </div>
+                </div>
+                
+            </div>
+
+        </div>
+
+        <div id="pie">
+          <p>-2021-</p>
+          <p>Santiago Suarez</p>
+        </div>
+
+    </body>
+</html>
