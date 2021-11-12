@@ -37,7 +37,12 @@ function validar()
                     alert('Nombre invalido');
                     return false;
                 }
-
+                
+                var letters = /^[A-Za-z]+$/;
+                if(!n.match(letters)){
+                  alert('Un nombre solo puede tener letras');
+                  return false
+                }
 
                 var e=document.miformulario.edad.value;
 
@@ -46,29 +51,51 @@ function validar()
                     alert('Debe ingresar su edad');
                     return false;
                 }
-                if(Number(e) < 18)
+                if(Number(e) < 18 || Number(e) > 100)
                 {
-                    alert('Debe ser mayor de edad')
+                    alert('Edad invalida')
                     return false;
                 }
+
+                var o =document.miformulario.Opciones.selectedIndex
+                
+                if(o == 0){
+                  alert('Debe seleccionar una ocupacion');
+                  return false;
+                }
+
+                var s =document.miformulario.sexo
+                var cc=0;
+                for(i=0; i<s.length;i++){
+                  if(s[i].checked){
+                    cc++;
+                  }
+                }
+                if(cc == 0){
+                  alert('Seleccione un sexo');
+                  return false;
+                }
+
+                var cb =document.miformulario.cbaceptar
+
+                if(!cb.checked){
+                  alert('Acepte los terminos');
+                  return false;
+                }
+                
+                var a=document.miformulario.area.value.trim();
+                if((!a) || (a.length < 10)){
+                  alert('Agrege una biografia');
+                  return false;
+                }
+
+                if(!confirm('Desea enviar su informacion?')){
+                  return false;
+                }
+                
                 return true;
             }
 
-            function confirmacion(bol){
-                if(!bol){
-                    return false;
-                }else{
-                    var boolean = confirm('Desea enviar su informacion');
-
-                    if(boolean && bol){
-                        return true;
-                    }else{
-                        return false;
-                    }
-                }
-                
-                    
-            }
 
 /*-------------------------VENTANA-FORMULARIO-------------------------*/
 
@@ -76,48 +103,60 @@ function showModal(contentHtml) {
   const modal = document.createElement("div");
 
   modal.classList.add("modal");
+
   modal.innerHTML = `
 
-        <div class="modal__ineer" style="text-align: center;">
-            <div class="modal__top">
-                <div>
-                    <div id="flayer"></div>
-                    <div id="fcon">
-                        <div class="modal__close"><span class="material-icons">close</span></div><br>
+  <div class="modal__ineer" style="text-align: center;">
+                <div class="modal__top">
+                    <div>
+                        <div id="flayer"></div>
+                        <div id="fcon">
+                            <div class="modal__close"><span class="material-icons">close</span></div><br>
+                            
+                            <div class="modal__content">
+                              
+                              <form name="miformulario">
+                              
+                              
+                                <span></span><br><h1>Crear Cuenta</h1>
+                                Nombre: &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                <input type="text" name="nbre"placeholder="Ingrese nombre" ><br><br>
+                                Contraseña: &nbsp;&nbsp;
+                                <input type="password" name="pass" placeholder="Ingrese contraseña"><br><br>
+                                Mail: &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                <input type="email" name="mail" placeholder="EJ: nombre@mail.com" ><br><br>
+                                Telefono: &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+                                <input type="tel" name="telefono" placeholder="EJ: 1000-100000" pattern="[0-9]{4}-[0-9]{6}"><br><br>
+                                Edad: &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                <input type="text" name="edad" placeholder="Debe ser mayor de edad"><br><br>
                         
-                        <div class="modal__content">
-                          
-                          <form name="miformulario">
-                          <span></span><br>
-                          <h1>Crear Cuenta</h1>
-                            Tu Nombre<br>
-                            <input type="text" name="nbre"><br>
-                            Tu Edad<br>
-                            <input type="text" name="edad"><br><br>
-                    
-                            Seleccionar Sexo<br>
-                            <input type="radio" name="sexo" value="Hombre" checked>Hombre 
-                            <input type="radio" name="sexo" value="Mujer">Mujer <br><br>
-
-                            Seleccionar Ocupacion<br>
-                            <select name="Opciones" id="select"><
-                              <option value="1">Trabajando</option>
-                              <option value="2">Estudiando</option>
-                            </select><br><br>
-
-                            Agregar Descripcion:<br>
-                            <textarea name="area" id="textarea" cols="30" rows="5"></textarea><br>
-
-                            <input type="submit" name="btn_enviar" value="Cargar" onclick="return confirmacion(validar())">
-                            <input type="reset" name="btn_reset" value="Reiniciar">
-                          </form>
-
+                                Seleccionar Sexo<br>
+                                <input type="radio" name="sexo" value="Hombre">Hombre 
+                                <input type="radio" name="sexo" value="Mujer">Mujer <br><br>
+    
+                                Seleccionar Ocupacion<br>
+                                <select name="Opciones" id="select">&lt;
+                                  <option valur="">Seleccione una ocupacion</option>
+                                  <option value="1">Trabajando</option>
+                                  <option value="2">Estudiando</option>
+                                </select><br><br>
+    
+                                Agregar Biografia:<br>
+                                <textarea name="area" id="textarea" cols="30" rows="5" placeholder="Ingrese mas de 10 caracteres" style="resize: none;" ></textarea><br><br>
+    
+                                Acepta los terminos y condiciones <input type="checkbox" name="cbaceptar" value="acepto"><br><br>
+    
+                                <input type="submit" name="btn_enviar" value="Cargar" onclick="return validar()">
+                                <input type="reset" name="btn_reset" value="Reiniciar">
+                              
+                              </form>
+    
+                            </div>
+                            <div class="modal__bottom"></div>
                         </div>
-                        <div class="modal__bottom"></div>
                     </div>
                 </div>
             </div>
-        </div>
     `;
 
   modal.querySelector(".modal__close").addEventListener("click", () => {

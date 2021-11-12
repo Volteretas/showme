@@ -25,13 +25,55 @@
         </div>
 
         <div id="cuerpo" style="text-align: center;">
-            <div class="modal">
-                <div id="con">
-                    <div id="flayer"></div>
-                    <div id="fcon">
-                        <span class="material-icons">cancel</span>
-                        <h1>Iniciar Sesion</h1>
+            <div class="modal__ineer" style="text-align: center;">
+                <div class="modal__top">
+                    <div>
+                        <div id="flayer"></div>
+                        <div id="fcon">
+                            <div class="modal__close"><span class="material-icons">close</span></div><br>
+                            
+                            <div class="modal__content">
+                              
+                              <form name="miformulario">
+                              
+                              
+                                <span></span><br><h1>Crear Cuenta</h1>
+                                <label for="algo">Nombre </label> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                <input type="text" name="nbre"><br><br>
+                                <label for="algo">Contraseña</label> &nbsp;&nbsp;
+                                <input type="password" name="pass"><br><br>
+                                <label for="algo">Mail</label> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                <input type="email" name="mail"><br><br>
+                                <label for="algo">Telefono</label> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+                                <input type="tel" name="telefono" pattern="[0-9]{4}-[0-9]{6}"><br><br>
+                                <label for="algo">Edad</label> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+
+                                <input type="text" name="edad"><br><br>
                         
+                                Seleccionar Sexo<br>
+                                <input type="radio" name="sexo" value="Hombre">Hombre 
+                                <input type="radio" name="sexo" value="Mujer">Mujer <br><br>
+    
+                                Seleccionar Ocupacion<br>
+                                <select name="Opciones" id="select">&lt;
+                                  <option valur="">Seleccione una ocupacion</option>
+                                  <option value="1">Trabajando</option>
+                                  <option value="2">Estudiando</option>
+                                </select><br><br>
+    
+                                Agregar Descripcion:<br>
+                                <textarea name="area" id="textarea" cols="30" rows="5"></textarea><br><br>
+    
+                                Acepta los terminos y condiciones <input type="checkbox" name="cbaceptar" value="acepto"><br>
+    
+                                <input type="submit" name="btn_enviar" value="Cargar" onclick="return confirmacion(validar())">
+                                <input type="reset" name="btn_reset" value="Reiniciar">
+                              
+                              </form>
+    
+                            </div>
+                            <div class="modal__bottom"></div>
+                        </div>
                     </div>
                 </div>
             </div>

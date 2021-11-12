@@ -2,7 +2,7 @@
 
     body{
         font-family: Arial, Helvetica, sans-serif;
-        background-image: url("../imagenes/fondo.png");
+        background-image: url("../imagenes/fondo2.jpg");
     }
 
 /*---------------------- CABEZERA ----------------------- */
@@ -188,6 +188,7 @@
   .modal__content {
     padding: 0 var(--gap);
     line-height: 1.5;
+    
   }
   
   .modal__bottom {
@@ -231,6 +232,8 @@
         float: right;
         height: 566px;
         width: 600px;
+        overflow-y: scroll;
+        overflow-x: hidden;
 
     }
 
@@ -265,5 +268,5 @@
     }
 
       ::-webkit-scrollbar{
-        border-radius: 10px;
+        background-attachment: fixed;
       }
